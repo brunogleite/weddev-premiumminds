@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="build/stylesheets/style.css">
+    <title>Web Dev- Premium Minds</title>
+</head>
+
+<body>
+    <section class="section">
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <img src="/logo.svg" alt="logo">
+            </div>
+        </nav>
+        <section class="content">
+            <aside class="sidebar">
+                <ul>
+                    <li><a href="#" class="list-item">Lorem Ipsum</a></li>
+                    <li><a href="#" class="list-item selected">Utilizador</a></li>
+                    <li><a href="#" class="list-item">Quantum solum</a></li>
+                    <li><a href="#" class="list-item">Marcus Tremer</a></li>
+                </ul>
+            </aside>
+            <main class="user">
+                <div class="user-details">
+                    <h1>Utilizador</h1>
+                    <div class="dropdowns">
+                        <div class="dropdown">
+                            <div class="dropdown__header" id="dropdown__header">
+                                <a href="#" style="text-decoration:none ; color: black;">
+                                    <div class="dropdown__header-inner">
+                                        <h3>Tipo de utilizador</h3>
+                                        <div class="icon"></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="dropdown__form">
+                                <form class="dropdown__form-list">
+                                    <div>
+                                        <label class="container-checkbox" for="projectManager">Project Manager
+                                            <input type="checkbox" id="projectManager" name="projectManager" checked="checked">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                      <div>
+                                        <label class="container-checkbox" for="architect">Architect
+                                            <input type="checkbox" checked="checked" id="architect" name="architect">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                      </div>
+                                      <div>
+                                        <label class="container-checkbox" for="developer">Developer
+                                            <input type="checkbox" checked="checked" id="developer" name="developer">
+                                            <span class="checkmark"></span>
+                                          </label>
+                                      </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                                <div class="dropdown__header" id="dropdown__header">
+                                    <a href="#" style="text-decoration:none ; color: black;">
+                                        <div class="dropdown__header-inner">
+                                            <h3>Contacto</h3>
+                                            <p>-</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            <div class="dropdown__form">
+                                <form class="dropdown__form-list">
+                                    <div class="dropdown__form-list-upper">
+                                        <div>
+                                            <label for="email">Email</label>
+                                            <input type="text" id="email" name="email">
+                                        </div>
+                                        <div>
+                                            <label for="password">Palavra-passe</label>
+                                            <input type="password" id="password" name="password">
+                                        </div>
+                                    </div>
+                                    <div class="dropdown__form-list-lower">
+                                        <div>
+                                            <label for="telefone">Telefone</label>
+                                            <input type="tel" id="telefone" name="telefone" value="+351">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btns">
+                    <button class="btn-ghost">Cancelar</button>
+                    <button class="btn-primary">Guardar</button>
+                </div>
+            </main>
+        </section>
+    </section>
+    <script src="app.js"></script>
+</body>
+
+</html>

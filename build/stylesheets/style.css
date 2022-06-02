@@ -1,0 +1,268 @@
+:root {
+  --white: #fff;
+  --gray-50: #F5F5F5;
+  --gray-100: #EBEBEB;
+  --primary-color: #333F52;
+  --accent-color: #00ADE6;
+  --dark-color: #273142;
+  --fontSize-h1: 2rem;
+  --fontSize-h2: 1.5rem;
+  --fontSize-h3: 1.125rem;
+  --fontSize-p: 1rem;
+  --fontSize-small: 0.75rem;
+  --p-4: 1em;
+  --p-5: 1.125em;
+  --p-6: 1.5em;
+  --p-8: 2em;
+  --p-9: 2.375em;
+  --p-12: 3em;
+  --p-13: 3.25em;
+}
+
+@media only screen and (max-width: 768px) {
+  :root {
+    --fontSize-h1: 1.75rem;
+    --fontSize-h2: 1.25rem;
+    --fontSize-h3: 1rem;
+    --fontSize-p: 0.75rem;
+    --fontSize-small: 0.5rem;
+  }
+
+  .btns {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  .btns .btn-ghost,
+.btns .btn-primary {
+    max-width: 100%;
+  }
+}
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.section {
+  background-color: var(--gray-50);
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: var(--white);
+}
+
+.content {
+  display: flex;
+}
+
+.sidebar {
+  background-color: var(--primary-color);
+  min-height: 100vh;
+  flex: 10%;
+  position: relative;
+}
+.sidebar ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--p-8);
+  padding: var(--p-13) var(--p-13) 0 var(--p-13);
+}
+.sidebar ul li {
+  list-style: none;
+}
+.sidebar ul .list-item {
+  color: var(--white);
+  font-size: var(--fontSize-p);
+  opacity: 0.7;
+  text-decoration: none;
+}
+.sidebar ul .list-item.selected {
+  opacity: 1;
+  font-weight: bold;
+}
+.sidebar::after {
+  content: "2019 Premium-minds.com";
+  position: absolute;
+  color: var(--white);
+  background-color: var(--dark-color);
+  width: 100%;
+  padding: 32px;
+  font-size: var(--fontSize-small);
+  text-align: center;
+  bottom: 0;
+}
+
+.user {
+  flex: 80%;
+  padding: var(--p-9) 0 0 var(--p-13);
+}
+.user-details h1 {
+  font-size: var(--fontSize-h1);
+  color: var(--primary-color);
+}
+.user-details .dropdowns {
+  padding: var(--p-13) var(--p-13) var(--p-13) 0;
+}
+.user-details .dropdowns .dropdown__header {
+  background-color: var(--gray-100);
+  cursor: pointer;
+}
+.user-details .dropdowns .dropdown__header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--p-5);
+}
+.user-details .dropdowns .dropdown__header-inner h2 {
+  font-size: var(--fontSize-h3);
+  color: var(--dark-color);
+}
+.user-details .dropdowns .dropdown__form {
+  padding: var(--p-9) 0 var(--p-9) var(--p-9);
+  background-color: var(--white);
+  display: none;
+  transition: all 0.3s ease;
+}
+.user-details .dropdowns .dropdown__form-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--p-4);
+}
+.user-details .dropdowns .dropdown__form-list .container-checkbox {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: var(--fontSize-p);
+  color: var(--dark-color);
+}
+.user-details .dropdowns .dropdown__form-list .container-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.user-details .dropdowns .dropdown__form-list .container-checkbox .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 0.1em;
+}
+.user-details .dropdowns .dropdown__form-list .container-checkbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.user-details .dropdowns .dropdown__form-list .container-checkbox input:checked ~ .checkmark {
+  background-color: var(--accent-color);
+}
+.user-details .dropdowns .dropdown__form-list .container-checkbox .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.user-details .dropdowns .dropdown__form-list .container-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+.user-details .dropdowns .dropdown__form-list .container-checkbox .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--white);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.user-details .dropdowns .dropdown__form-list-upper, .user-details .dropdowns .dropdown__form-list-lower {
+  display: flex;
+  gap: var(--p-9);
+  align-items: center;
+  padding: 16px 0;
+}
+.user-details .dropdowns .dropdown__form-list-upper div, .user-details .dropdowns .dropdown__form-list-lower div {
+  position: relative;
+  width: 20%;
+}
+.user-details .dropdowns .dropdown__form-list-upper div input, .user-details .dropdowns .dropdown__form-list-lower div input {
+  border: none;
+  border-bottom: 1.5px solid var(--dark-color);
+  opacity: 0.7;
+  padding: 8px;
+  width: 100%;
+  transition: opacity 0.3s ease-in-out;
+  outline: none;
+}
+.user-details .dropdowns .dropdown__form-list-upper div input:hover, .user-details .dropdowns .dropdown__form-list-lower div input:hover {
+  opacity: 1;
+}
+.user-details .dropdowns .dropdown__form-list-upper div label, .user-details .dropdowns .dropdown__form-list-lower div label {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  color: var(--dark-color);
+  font-weight: bold;
+  opacity: 0.6;
+  font-size: var(--fontSize-p);
+}
+.user-details .dropdowns .dropdown__header.active + .dropdown__form {
+  display: block;
+}
+
+.btn-ghost {
+  background-color: var(--white);
+  color: var(--primary-color);
+  font-size: var(--fontSize-h3);
+  border: 1px solid var(--gray-100);
+  cursor: pointer;
+  border-radius: 100vw;
+  padding: var(--p-4) 0;
+  max-width: 280px;
+  width: 100%;
+  transition: background-color 0.3s ease-in-out;
+}
+.btn-ghost:hover, .btn-ghost:focus {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: var(--fontSize-h3);
+  border: 1px solid var(--gray-100);
+  cursor: pointer;
+  border-radius: 100vw;
+  padding: var(--p-4) 0;
+  max-width: 280px;
+  width: 100%;
+  transition: background-color 0.3s ease-in-out;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--primary-color);
+}
+
+.btns {
+  display: flex;
+  padding-right: var(--p-13);
+  gap: var(--p-6);
+  justify-content: flex-end;
+}
+
+/*# sourceMappingURL=style.css.map */
