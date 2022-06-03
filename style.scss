@@ -139,6 +139,34 @@
                             color: var(--dark-color);
                         }
 
+                        .icon{
+                            width: 20px;
+                            height: 20px;
+                            position: relative;
+                            transition: all 0.3s ease-in-out;
+                            
+
+                            .line{
+                                height: 2px;
+                                background-color: var(--dark-color);
+                                width: 100%;
+                                position: absolute;
+                            }
+
+                            .line-horizontal{
+                                left: 0;
+                                transform: rotate(90deg);
+                                top: 50%;
+                            }
+
+                            .line-vertical{
+                                transition: opacity 0.3s ease-in-out;
+                                left: 0;
+                                top: 50%;
+                                
+                            }
+                        }
+
                     }
                 }
 
@@ -261,6 +289,15 @@
 
                 &__header.active+.dropdown__form {
                     display: block;
+                }
+
+                &__header.active .icon{
+                    transform: rotate(90deg);
+
+                    .line-vertical{
+                        opacity: 0;
+                    }
+
                 }
 
             }
